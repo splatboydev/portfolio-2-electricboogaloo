@@ -1,10 +1,18 @@
 import Head from "next/head"
 import { Button } from "components/Button/Button"
 import { LP_GRID_ITEMS } from "../lp-items"
+import Script from "next/script"
+import { NextScript } from "next/document"
 
 export default function Web() {
   return (
     <>
+    <Script src="/darkmode.js" onLoad={() => {
+          console.log("Dark mode loaded.")
+        }} />
+    <Script src="/tilt.js" onLoad={() => {
+      console.log("Tilt loaded")
+    }} />
       <Head>
         <meta property="og:url" content="https://next-enterprise.vercel.app/" />
         <meta
@@ -14,13 +22,14 @@ export default function Web() {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
-        <title>Next.js Enterprise Boilerplate</title>
+        <title>Portfolio</title>
+        <NextScript />
       </Head>
       <section className="bg-white dark:bg-gray-900">
         <div className="mx-auto grid max-w-screen-xl px-4 py-8 text-center lg:py-16">
           <div className="mx-auto place-self-center">
             <h1 className="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight dark:text-white md:text-5xl xl:text-6xl">
-              Next.js Enterprise Boilerplate
+              Portfolio
             </h1>
             <p className="mb-6 max-w-2xl font-light text-gray-500 dark:text-gray-400 md:text-lg lg:mb-8 lg:text-xl">
               Jumpstart your enterprise project with our feature-packed, high-performance Next.js boilerplate!
@@ -43,7 +52,7 @@ export default function Web() {
         <div className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
           <div className="justify-center space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 lg:grid-cols-3">
             {LP_GRID_ITEMS.map((singleItem) => (
-              <div key={singleItem.title} className="flex flex-col items-center justify-center text-center">
+              <div key={singleItem.title} className="flex flex-col items-center justify-center text-center rounded-lg h-60 bg-slate-600 tilt">
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary-100 p-1.5 text-blue-700 dark:bg-primary-900 lg:h-12 lg:w-12">
                   {singleItem.icon}
                 </div>
