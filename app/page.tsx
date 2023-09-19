@@ -1,29 +1,24 @@
+import { Metadata } from "next"
 import Head from "next/head"
 import { Button } from "components/Button/Button"
 import { LP_GRID_ITEMS } from "../lp-items"
-import Script from "next/script"
-import { NextScript } from "next/document"
+
+export const metadata: Metadata = {
+  type: "website",
+  url: "https://example.com",
+  title: "My Website",
+  description: "My Website Description",
+  siteName: "My Website",
+  images: [{
+    url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAqFBMVEVHcEz7+/v+/v709PX////7+/v09fX4+Pj////8/Pz7+/v////z+PP29vf09PX////+/v7///////////83qlfrQzPsTkFHiPUlpkszf/RAhfX6uwD8wBLW4vyQs/j96N3/+vPh8eR8wJiHrfjylpBhuXftX0rR6Nb608j0qKNwofBKsGWzy/rzn5n0o57uc2/94J78zFb3u7es1rC6z/rHuTCVsC08ooagt3gtAAAAE3RSTlMA08Eb4kVwOqb5kV7jkn8NfnFw9v5R3wAAAVtJREFUOI2dU9lywjAMTIAchgmljU3sJBRycRZoocf//1ltyZ4cpi/dl0jeHWllxY7TxVPgecGT8weCkMQAEgaP6EncwcSShPEAYZ+fDHlZ5BG/P9T1YW8rRnhyYRoXzEeGn0G6XrKlBmNrOJppAVZnmpNftt1gDeSfVbhhwNa3W83Y1hh9aR1eFX/G43N/kjEYyCR/sGcdG4vvWb692jzYnKrgI88znL96RVQrlU3NJWdSgM5FihBv5sKHggSR9gW5FKx1BSGUSHwawQI8ZHl2B8FK4ZgmAjwspMDDKb4obc2nsgIEnrnpzTeltDF8lSbpsb1r2OWdS8Vpp8KiVAWgA+4TesSNFFBOm+bE+U8iqraD47gqJidVQ4NjA1eve4ydS6PgvGw3AfAxL0oOKAvM/fafi4z/YrcrTBx1/9q5vcj54N2QPk3sx+V3JMS3aKgSuUTCjR49zf/jF+G2OgtU1MugAAAAAElFTkSuQmCC",
+  }],
+}
 
 export default function Web() {
   return (
     <>
-    <Script src="/darkmode.js" onLoad={() => {
-          console.log("Dark mode loaded.")
-        }} />
-    <Script src="/tilt.js" onLoad={() => {
-      console.log("Tilt loaded")
-    }} />
       <Head>
-        <meta property="og:url" content="https://next-enterprise.vercel.app/" />
-        <meta
-          property="og:image"
-          content="https://raw.githubusercontent.com/Blazity/next-enterprise/main/project-logo.png"
-        />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta name="twitter:card" content="summary_large_image" />
         <title>Portfolio</title>
-        <NextScript />
       </Head>
       <section className="bg-white dark:bg-gray-900">
         <div className="mx-auto grid max-w-screen-xl px-4 py-8 text-center lg:py-16">
@@ -32,9 +27,7 @@ export default function Web() {
               Portfolio
             </h1>
             <p className="mb-6 max-w-2xl font-light text-gray-500 dark:text-gray-400 md:text-lg lg:mb-8 lg:text-xl">
-              Jumpstart your enterprise project with our feature-packed, high-performance Next.js boilerplate!
-              Experience rapid UI development, AI-powered code reviews, and an extensive suite of tools for a smooth and
-              enjoyable development process.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec condimentum quam. Fusce sagittis, massa non condimentum consequat, odio tortor condimentum arcu, quis consequat, etc etc.
             </p>
             <Button href="https://github.com/Blazity/next-enterprise" className="mr-3">
               Get started
