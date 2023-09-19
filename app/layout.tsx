@@ -17,8 +17,8 @@ export default function RootLayout({
     return (
       <html lang="en">
         <head>
-          <Script src="/darkmode.js"/>
-          <Script src="/tilt.js" strategy="afterInteractive"/>
+          <Script async defer src="/darkmode.js"/>
+          <Script async defer src="/tilt.js" strategy="afterInteractive"/>
         </head>
         <body>{children}</body>
       </html>
